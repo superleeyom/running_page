@@ -1,0 +1,20 @@
+# Project dependencies
+.cache
+*.pyc
+node_modules
+yarn-error.log
+
+/public
+# Build directory
+/build
+.DS_Store
+.sass-cache/
+.idea
+_posts/
+_site/
+
+.mypy_cache
+
+/.vscode
+
+config.yaml

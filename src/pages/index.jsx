@@ -243,7 +243,7 @@ const YearsStat = ({ runs, year, onClick }) => {
           {INFO_MESSAGE(yearsArr.length, year)}
           <br />
           <br />
-          “强风迎面吹拂，逆风奔跑前行，坚信答案就在前方。”
+          "强风迎面吹拂，逆风奔跑前行，坚信答案就在前方。"
           <br />
           <p style={quoteStyle}>&ndash;&ndash;《强风吹拂》</p>
         </p>

@@ -4,7 +4,7 @@ const MUNICIPALITY_CITIES_ARR = ['北京市', '上海市', '天津市', '重庆�
 
 // IF you outside China please make sure IS_CHINESE = false
 const IS_CHINESE = true;
-const CHINESE_INFO_MESSAGE = (yearLength, year) => `我用 Keep 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
+const CHINESE_INFO_MESSAGE = (yearLength, year) => `我用 Apple Watch 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
 const ENGLISH_INFO_MESSAGE = (yearLength, year) => `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;

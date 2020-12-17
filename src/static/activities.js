@@ -5570,6 +5570,20 @@ const activities = [
     "average_heartrate": 170.0,
     "average_speed": 3.465512551975634,
     "streak": 2
+  },
+  {
+    "run_id": 1608157404204,
+    "name": "run from gpx",
+    "distance": 4838.090973722359,
+    "moving_time": "0:23:49.796000",
+    "type": "Run",
+    "start_date": "2020-12-16 22:23:24",
+    "start_date_local": "2020-12-17 06:23:24",
+    "location_country": "\u89c2\u6f9c\u516c\u56ed\u8def, \u9f99\u534e\u533a, \u6df1\u5733\u5e02, \u5e7f\u4e1c\u7701, 518110, \u4e2d\u56fd",
+    "summary_polyline": "udtiCieawTCYg@A{Cj@o@xAhA`A~DcAX]G_AkAe@_EhA?rAnA\\dDk@^{AYe@q@CsDr@_@dAn@`AfEs@h@yAaAs@mEz@QpAr@x@zDy@`@YF}@aAs@gE|@KvA`Aj@bDs@v@}AcAo@eEt@K~An@d@vDo@h@uA_As@gEp@O~@l@dA~Ds@j@cAWw@g@KqDr@q@jAv@x@dEm@h@gAOm@u@UsDl@m@fAl@dA~Dk@|@iA_A_AsEn@QvA~@j@rDq@n@aAMg@}@UaEn@YdAt@`AhEw@`@u@Mm@u@a@_Df@q@`@HfBz@JfDq@d@gA",
+    "average_heartrate": 171.0,
+    "average_speed": 3.383763119859308,
+    "streak": 3
   }
 ];
 

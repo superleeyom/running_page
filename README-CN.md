@@ -16,7 +16,7 @@
 | ------- | ------- | ------- |
 | [shaonianche](https://github.com/shaonianche) | https://run.duangfei.org | Nike |
 | [yihong0618](https://github.com/yihong0618) | https://yihong.run/running | Nike |
-| [superleeyom](https://github.com/superleeyom) | https://running.leeyom.top | Keep |
+| [superleeyom](https://github.com/superleeyom) | https://running.leeyom.top | Nike |
 | [geekplux](https://github.com/geekplux) | https://activities.geekplux.com | Nike |
 | [guanlan](https://github.com/guanlan) | https://grun.vercel.app | Strava |
 | [tuzimoe](https://github.com/tuzimoe) | https://run.tuzi.moe | Nike |
@@ -24,10 +24,12 @@
 | [kcllf](https://github.com/kcllf) | https://running-tau.vercel.app | Garmin-cn |
 | [mq](https://github.com/MQ-0707) | https://running-iota.vercel.app | Keep |
 | [zhaohongxuan](https://github.com/zhaohongxuan) | https://running-page-psi.vercel.app/ | Keep |
+| [yvetterowe](https://github.com/yvetterowe) | https://run.haoluo.io | Strava |
+| [love-exercise](https://github.com/KaiOrange) | https://run.kai666666.top/ | Keep |
 
 ## 它是怎么工作的
 
-![image](https://user-images.githubusercontent.com/15976103/100430000-28753480-30d1-11eb-8b4e-258a67038d74.png)
+![image](https://user-images.githubusercontent.com/15976103/102441412-2f9ebb00-405d-11eb-9dc7-1a8951748895.png)
 
 ## 特性
 
@@ -54,6 +56,7 @@
 - **[Garmin](#Garmin)**
 - **[Garmin-cn](#Garmin-CN(大陆用户请用这个))**
 - **[Keep](#Keep)**
+- **[悦跑圈](#Joyrun)** (因悦跑圈限制单个设备原因，无法自动化)
 - **[GPX](#GPX)**
 - **[Nike+Strava(Using NRC Run, Strava backup data)](#Nike+Strava)**
 
@@ -79,7 +82,7 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoieWlob25nMDYxOCIsImEiOiJja2J3M28xbG4wYzl0MzJxZm0
 
 ### 如果你是海外用户请更改 `IS_CHINESE = false` in `src/utils/const.js`
 
-## 下载您的 Runtastic(Adidas Run)/Nike Run Club/Strava/Garmin/Garmin-cn/Keep 数据
+## 下载您的 Runtastic(Adidas Run)/Nike Run Club/Strava/Garmin/Garmin-cn/Keep 数据, [别忘了在 `total` 页面生成可视化SVG](#Total-Data-Analysis).
 
 
 ### GPX
@@ -121,6 +124,53 @@ python3(python) scripts/keep_sync.py ${your mobile} ${your password} --with-gpx
 ```python
 python3(python) scripts/keep_sync.py 13333xxxx example --with-gpx
 ```
+</details>
+
+
+### JoyRun（悦跑圈）
+
+<details>
+<summary>获取您的悦跑圈数据</summary>
+
+获取登陆验证码：
+
+确保自己的账号能用手机号 + 验证码登陆
+
+点击获取验证码, 注： **不要在手机输入验证码，拿到验证码就好，用这个验证码放到下方命令中**
+
+![image](https://user-images.githubusercontent.com/15976103/102352588-e3af3000-3fe2-11eb-8131-14946b0262eb.png)
+
+```python
+python3(python) scripts/joyrun_sync.py ${your mobile} ${your 验证码}
+```
+
+示例：
+```python
+python3(python) scripts/joyrun_sync.py 13333xxxx xxxx
+```
+
+> 注：我增加了 joyrun 可以导出 gpx 功能, 执行如下命令，导出的 gpx会加入到 GPX_OUT 中，方便上传到其它软件
+
+```python
+python3(python) scripts/joyrun_sync.py ${your mobile} ${your 验证码} --with-gpx
+```
+
+示例：
+
+```python
+python3(python) scripts/keep_sync.py 13333xxxx example --with-gpx
+```
+
+> 注：因为验证码有过期时间，我增加了 cookie uid sid 登陆的方式， uid 及 sid 在您登陆过程中会在控制台打印出来
+
+![image](https://user-images.githubusercontent.com/15976103/102354069-05a9b200-3fe5-11eb-9b30-221c32bbc607.png)
+
+示例：
+
+```python
+python3(python) scripts/joyrun_sync.py 1393xx30xxxx 97e5fe4997d20f9b1007xxxxx --from-uid-sid --with-gpx
+```
+
 </details>
 
 ### Garmin
@@ -296,7 +346,7 @@ https://github.com/flopp/GpxTrackPoster
 
 <details>
 <summary>使用 vercel 部署</summary>
-  
+
 1. vercel 连接你的 GitHub repo
 
 ![image](https://user-images.githubusercontent.com/15976103/94452465-2599b880-01e2-11eb-9538-582f0f46c421.png)

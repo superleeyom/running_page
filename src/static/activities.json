@@ -1,4 +1,4 @@
-const activities = [
+[
   {
     "run_id": 9223370517465290807,
     "name": "run from keep",
@@ -5683,6 +5683,4 @@ const activities = [
     "average_speed": 2.290238986037027,
     "streak": 3
   }
-];
-
-export {activities};
+]

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <trk>
+    <name>gpx from codoon</name>
+    <trkseg>
+      <trkpt lat="22.7190455" lon="114.0438398">
+        <ele>39.52536</ele>
+        <time>2020-06-20T22:29:36Z</time>
+      </trkpt>
+      <trkpt lat="22.7191451" lon="114.043846">
+        <ele>39.61536</ele>
+        <time>2020-06-20T22:29:41Z</time>
+      </trkpt>
+      <trkpt lat="22.7191451" lon="114.043846">
+        <ele>39.61536</ele>
+        <time>2020-06-20T22:29:51Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

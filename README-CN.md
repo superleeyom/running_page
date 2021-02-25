@@ -25,11 +25,16 @@
 | [mq](https://github.com/MQ-0707) | https://running-iota.vercel.app | Keep |
 | [zhaohongxuan](https://github.com/zhaohongxuan) | https://running-page-psi.vercel.app | Keep |
 | [yvetterowe](https://github.com/yvetterowe) | https://run.haoluo.io | Strava |
-| [love-exercise](https://github.com/KaiOrange) | https://run.kai666666.top/ | Keep |
+| [love-exercise](https://github.com/KaiOrange) | https://run.kai666666.top | Keep |
 | [zstone12](https://github.com/zstone12) | https://running-page.zstone12.vercel.app | Keep |
-| [Lax](https://github.com/Lax) | https://running-lax.vercel.app | Keep |
+| [Lax](https://github.com/Lax) | https://lax.github.io/running | Keep |
 | [lusuzi](https://github.com/lusuzi) | https://running.lusuzi.vercel.app | Nike |
 | [wh1994](https://github.com/wh1994) | https://run4life.fun | Garmin |
+| [liuyihui](https://github.com/YiHui-Liu) | https://run.foolishfox.cn | Keep |
+| [FrankSun](https://github.com/hi-franksun) | https://hi-franksun.github.io/running_page | Nike |
+| [AhianZhang](https://github.com/AhianZhang) | https://running.ahianzhang.com | Keep |
+| [L1cardo](https://github.com/L1cardo) | https://run.licardo.cn | Nike |
+
 ## 它是怎么工作的
 
 ![image](https://user-images.githubusercontent.com/15976103/105784027-e1ad9900-5fb2-11eb-9479-372be21482f1.png)
@@ -38,7 +43,7 @@
 
 1. GitHub Actions 管理自动同步跑步进程及自动生成新的页面
 2. Gatsby 生成的静态网页，速度快
-3. 支持 Vercel(推荐) 自动部署
+3. 支持 Vercel(推荐) 和 GitHub Pages 自动部署
 4. React Hooks
 5. Mapbox 进行地图展示
 6. Nike 及 Runtastic(Adidas Run) 以及佳明（佳明中国）及 Keep 等, 自动备份 gpx 数据，方便备份及上传到其它软件
@@ -431,6 +436,18 @@ https://github.com/flopp/GpxTrackPoster
 
 2. 等待部署完毕
 3. 访问
+</details>
+
+<details>
+<summary> 部署到 GitHub Pages </summary>
+
+1. 配置 GitHub Action。如需使用自定义域名，可以修改 [.github/workflows/gh-pages.yml](.github/workflows/gh-pages.yml) 中的 `fqdn`（默认已注释掉）
+
+2. 修改 `gatsby-config.js`，更新 `pathPrefix`。【如果使用自定义域名，可跳过这一步】
+
+3. 在项目的 `Actions -> Workflows -> All Workflows` 中选择 Publish GitHub Pages，点击 `Run workflow`
+
+4. 在项目的 `Settings -> GitHub Pages -> Source` 部分，选择 `Branch: gh-pages` 并点击 `Save`。
 </details>
 
 ## GitHub Actions (Fork 的同学请一定不要忘了把 GitHub Token 改成自己的，否则会 push 到我的 repo 中，谢谢大家。)

@@ -15,13 +15,15 @@ def get_last_time(client):
     if there is no activities cause exception return 0
     """
     try:
+        activate = None
         activates = client.get_activities(limit=10)
-        activate = ""
+        # for else in python if you don't know please google it.
         for a in activates:
             if a.type == "Run":
                 activate = a
                 break
-        # activate = next(client.get_activities(limit=3))
+        else:
+            return 0
         # add 30 minutes to make sure after the end of this activate
         end_date = activate.start_date + activate.elapsed_time + timedelta(minutes=30)
         return int(datetime.timestamp(end_date) * 1000)

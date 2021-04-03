@@ -49,7 +49,7 @@ export {
 export const AVATAR =
   'https://avatars3.githubusercontent.com/u/22115219?s=460&u=b5ccdf99897979a4c95395f647370b67b4072526&v=4'; // Temp avatar
 export const NAVS = [
-  { text: 'Blog', link: 'https://github.com/superleeyom/blog/issues' },
+  { text: 'Blog', link: 'https://github.com/superleeyom/blog' },
   { text: 'About', link: 'https://github.com/superleeyom' },
 ];
 

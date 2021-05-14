@@ -1,6 +1,6 @@
 // const
 const MAPBOX_TOKEN =
-  'pk.eyJ1IjoibGVleW9tIiwiYSI6ImNraDl2YjRxbDBhdWsyd28xYTFpZW9hNXUifQ.ofXQvmske-p2YeNzZV10Kg';
+    'pk.eyJ1IjoibGVleW9tIiwiYSI6ImNraDl2YjRxbDBhdWsyd28xYTFpZW9hNXUifQ.ofXQvmske-p2YeNzZV10Kg';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
@@ -14,9 +14,13 @@ const MUNICIPALITY_CITIES_ARR = [
 const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength, year) =>
-  `我用 Apple Watch 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
+    `我用 Apple Watch 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
 const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
-  `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
+    `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
+
+// not support English for now
+const CHINESE_LOCATION_INFO_MESSAGE_FIRST = "我跑过了一些地方，希望随着时间推移，地图点亮的地方越来越多";
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = "不要停下来，不要停下奔跑的脚步";
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
@@ -38,6 +42,8 @@ const RUN_TITLES = {
 };
 
 export {
+  CHINESE_LOCATION_INFO_MESSAGE_FIRST,
+  CHINESE_LOCATION_INFO_MESSAGE_SECOND,
   MAPBOX_TOKEN,
   MUNICIPALITY_CITIES_ARR,
   IS_CHINESE,
@@ -47,12 +53,12 @@ export {
 };
 
 export const AVATAR =
-  'https://avatars3.githubusercontent.com/u/22115219?s=460&u=b5ccdf99897979a4c95395f647370b67b4072526&v=4'; // Temp avatar
+    'https://avatars3.githubusercontent.com/u/22115219?s=460&u=b5ccdf99897979a4c95395f647370b67b4072526&v=4'; // Temp avatar
 export const NAVS = [
   { text: 'Blog', link: 'https://github.com/superleeyom/blog' },
   { text: 'About', link: 'https://github.com/superleeyom' },
 ];
 
-const nike = 'rgb(224,237,94)';
+const nike = 'rgb(224,237,94)'; // if you want change the main color change here src/styles/variables.scss
 export const MAIN_COLOR = nike;
 export const PROVINCE_FILL_COLOR = '#47b8e0';

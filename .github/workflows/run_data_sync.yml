@@ -10,7 +10,6 @@ on:
     paths:
       - scripts/nike_sync.py
       - scripts/nike_to_strava_sync.py
-      - scripts/runtastic_sync.py
       - scripts/strava_sync.py
       - scripts/gen_svg.py
       - scripts/garmin_sync.py
@@ -22,7 +21,7 @@ env:
   # please change to your own config.
   RUN_TYPE: nike_to_strava # support runtastic/strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava, Please change the 'pass' it to your own
   ATHLETE: Leeyom
-  TITLE: Leeyom's Running Record
+  TITLE: Leeyom's Running
   TITLE_GRID: Over 5km Runs
   GITHUB_NAME: superleeyom
   GITHUB_EMAIL: 635709492@qq.com
@@ -64,11 +63,6 @@ jobs:
         run: |
           python scripts/nike_to_strava_sync.py ${{ secrets.NIKE_REFRESH_TOKEN }} ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}
 
-      - name: Run sync Runtastic script
-        if: env.RUN_TYPE == 'runtastic'
-        run: |
-          python scripts/runtastic_sync.py ${{ secrets.RUNTASTIC_EMAIL }} ${{ secrets.RUNTASTIC_PASSWORD }}
-
       - name: Run sync Keep script
         if: env.RUN_TYPE == 'keep'
         run: |
@@ -100,6 +94,7 @@ jobs:
           python scripts/gen_svg.py --from-db --title "${{ env.TITLE }}" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5
           python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}"  --output assets/grid.svg --min-distance 5.0 --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime
           python scripts/gen_svg.py --from-db --type circular --use-localtime
+          python scripts/gen_svg.py --from-db --year $(date +"%Y")  --language zh_CN --title "$(date +"%Y") Running" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
 
       - name: Push new runs
         uses: github-actions-x/commit@v2.6

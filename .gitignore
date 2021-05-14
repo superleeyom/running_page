@@ -9,12 +9,12 @@ yarn-error.log
 /build
 .DS_Store
 .sass-cache/
-.idea
 _posts/
 _site/
 
 .mypy_cache
 
 /.vscode
+.idea
 
 config.yaml

@@ -8,7 +8,7 @@ module.exports = {
     navLinks: [
       {
         name: 'Blog',
-        url: 'https://running.leeyom.top',
+        url: 'https://github.com/superleeyom/blog/issues',
       },
       {
         name: 'About',

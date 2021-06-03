@@ -1,7 +1,11 @@
 ![running_page](https://socialify.git.ci/yihong0618/running_page/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fshaonianche%2Fgallery%2Fmaster%2Frunning_page%2Frunning_page_logo_150*150.jpg&owner=1&pulls=1&stargazers=1&theme=Light)
 
+# [这里是白银越野赛全部21位逝者的故事](https://github.com/yihong0618/running_page/issues/135)
+
+R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
+
 # [打造个人跑步主页](https://yihong.run/running) 
-[English](README-EN.md) | 简体中文
+[English](README-EN.md) | 简体中文 | [Wiki](https://wiki.mfydev.run/)
 
 <details>
 <summary>GIF 展示</summary>
@@ -35,7 +39,7 @@
 | [AhianZhang](https://github.com/AhianZhang) | https://running.ahianzhang.com | Keep |
 | [L1cardo](https://github.com/L1cardo) | https://run.licardo.cn | Nike |
 | [luckylele666](https://github.com/luckylele666) | https://0000928.xyz | Strava |
-| [MFYDev](https://github.com/MFYDev) | https://mfydev.run | Nike |
+| [MFYDev](https://github.com/MFYDev) | https://mfydev.run | Garmin-cn |
 
 ## 它是怎么工作的
 
@@ -273,6 +277,7 @@ python3(python) scripts/garmin_sync.py example@gmail.com example
 
 <details>
 <summary>获取您的 Garmin-CN 数据</summary>
+如果你只想同步跑步数据请增加 --only-run
 
 ```python
 python3(python) scripts/garmin_sync.py ${your email} ${your password} --is-cn
@@ -287,6 +292,8 @@ python3(python) scripts/garmin_sync.py example@gmail.com example --is-cn
 
 <details>
 <summary>获取 Nike Run Club 数据</summary>
+
+**请注意：当您选择将 running_page 部署在自己的服务器上时，由于 Nike 已经封禁了一部分 IDC 的服务器 IP 段，您的服务器可能不能正常同步 Nike Run Club 的数据并显示 `403 error` ，这时您将不得不选择其他的托管方式。**
 
 获取 Nike 的 refresh_token
 1. 登录 [Nike](https://www.nike.com) 官网
@@ -502,8 +509,9 @@ Actions [源码](https://github.com/yihong0618/running_page/blob/master/.github/
 # 特别感谢
 - @[flopp](https://github.com/flopp) 特别棒的项目 [GpxTrackPoster](https://github.com/flopp/GpxTrackPoster)
 - @[shaonianche](https://github.com/shaonianche) icon 设计及文档
-- @[geekplux](https://github.com/geekplux) 帮助及鼓励, 重构了前端代码，学到了不少~
-- @[ben-29](https://github.com/ben-29) 搞定了咕咚，和我一起搞定了悦跑圈，太厉害了。
+- @[geekplux](https://github.com/geekplux) 帮助及鼓励, 重构了前端代码，学到了不少
+- @[ben-29](https://github.com/ben-29) 搞定了咕咚，和我一起搞定了悦跑圈，太厉害了
+- @[MFYDev](https://github.com/MFYDev) Wiki
 
 # 赞赏
 谢谢就够了

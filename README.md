@@ -10,8 +10,6 @@
 
 ## 我的跑步记录
 
-**希望自己能这么一直跑下去！**
-
 > "明明这么痛苦，这么难过，为什么就是不能放弃跑步？因为全身细胞都在蠢蠢欲动，想要感受强风迎面吹拂的滋味。––《强风吹拂》"
 
 [![running](https://github.com/superleeyom/running_page/blob/master/assets/github.svg)](https://running.leeyom.top/)

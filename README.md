@@ -8,7 +8,7 @@
 - Mapbox 进行地图展示
 - Nike 及 Runtastic(Adidas Run) 以及佳明（佳明中国）及 Keep 等, 自动备份 gpx 数据，方便备份及上传到其它软件
 
-## [我的跑步记录]((https://running.leeyom.top/))
+## [我的跑步记录](https://running.leeyom.top/)
 
 > "明明这么痛苦，这么难过，为什么就是不能放弃跑步？因为全身细胞都在蠢蠢欲动，想要感受强风迎面吹拂的滋味。––《强风吹拂》"
 

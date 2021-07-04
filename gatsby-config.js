@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/', // Change to `/running_page` when running on github pages
+  pathPrefix: `/`, // Change to `/running_page` when running on github pages
   siteMetadata: {
     siteTitle: 'Running page',
     siteUrl: 'https://running.leeyom.top',
@@ -77,7 +77,7 @@ module.exports = {
         background_color: '#e1e1e1',
         theme_color: '#e1e1e1',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.ico', // This path is relative to the root of the site.
+        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-transformer-sharp',

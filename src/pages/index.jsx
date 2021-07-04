@@ -17,7 +17,7 @@ import {
   getBoundsForGeoData,
   scrollToMap,
   sortDateFunc,
-  titleForShow
+  titleForShow,
 } from 'src/utils/utils';
 
 export default () => {
@@ -26,7 +26,7 @@ export default () => {
   const [year, setYear] = useState(thisYear);
   const [runIndex, setRunIndex] = useState(-1);
   const [runs, setActivity] = useState(
-    filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc),
+    filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc)
   );
   const [title, setTitle] = useState('');
   const [geoData, setGeoData] = useState(geoJsonForRuns(runs));
@@ -81,7 +81,7 @@ export default () => {
   useEffect(() => {
     setViewport({
       width: '100%',
-      height: 400,
+      height: 500,
       ...bounds,
     });
   }, [geoData]);
@@ -133,7 +133,7 @@ export default () => {
           rect.addEventListener(
             'click',
             () => locateActivity(runLocate),
-            false,
+            false
           );
         }
       }
@@ -190,7 +190,7 @@ export default () => {
             geoData={geoData}
             setViewport={setViewport}
             changeYear={changeYear}
-            thisYear={thisYear}
+            thisYear={year}
           />
           {year === 'Total' ? (
             <SVGStat />

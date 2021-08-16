@@ -42,7 +42,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 | [luckylele666](https://github.com/luckylele666) | https://0000928.xyz                        | Strava    |
 | [MFYDev](https://github.com/MFYDev)             | https://mfydev.run                         | Garmin-cn |
 | [Jim Gao](https://github.com/tianheg)             | https://run.yidajiabei.xyz/ | Keep |
-
+| [Oysmart](https://github.com/oysmart)             | https://run.ouyang.wang                  | Garmin-cn |
 ## 它是怎么工作的
 
 ![image](https://user-images.githubusercontent.com/15976103/105784027-e1ad9900-5fb2-11eb-9479-372be21482f1.png)
@@ -543,6 +543,7 @@ Actions [源码](https://github.com/yihong0618/running_page/blob/master/.github/
 # 特别感谢
 
 - @[flopp](https://github.com/flopp) 特别棒的项目 [GpxTrackPoster](https://github.com/flopp/GpxTrackPoster)
+- @[danpalmer](https://github.com/danpalmer) 原始的 UI 设计
 - @[shaonianche](https://github.com/shaonianche) icon 设计及文档
 - @[geekplux](https://github.com/geekplux) 帮助及鼓励, 重构了前端代码，学到了不少
 - @[ben-29](https://github.com/ben-29) 搞定了咕咚，和我一起搞定了悦跑圈，太厉害了

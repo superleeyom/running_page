@@ -70,13 +70,13 @@ if __name__ == "__main__":
     last_time = get_last_time(client)
     files = get_to_generate_files(last_time)
     new_gpx_files = make_new_gpxs(files)
-    time.sleep(10)  # just wait
+    time.sleep(1000)  # just wait
     if new_gpx_files:
         for f in new_gpx_files:
             upload_gpx(client, f)
 
     time.sleep(
-        50
+        1000
     )  # Fix the issue that the github action runs too fast, resulting in unsuccessful file generation
 
     run_strava_sync(

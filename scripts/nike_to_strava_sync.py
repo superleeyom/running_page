@@ -72,7 +72,7 @@ if __name__ == "__main__":
     new_gpx_files = make_new_gpxs(files)
     time.sleep(10)  # just wait
     if new_gpx_files:
-        for f in new_gpx_files[:2]:
+        for f in new_gpx_files:
             upload_gpx(client, f)
 
     time.sleep(

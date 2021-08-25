@@ -23,13 +23,17 @@ const RunTable = ({
     sortFuncInfo === 'BPM'
       ? a.average_heartrate - b.average_heartrate
       : b.average_heartrate - a.average_heartrate;
+  const sortRunTimeFunc = (a, b) =>
+    sortFuncInfo === 'TIME'
+      ? a.distance * a.average_speed - b.distance * b.average_speed
+      : b.distance * b.average_speed - a.distance * a.average_speed;
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
     ['KM', sortKMFunc],
     ['Pace', sortPaceFunc],
     ['BPM', sortBPMFunc],
-    ['TIME', null],
+    ['TIME', sortRunTimeFunc],
     ['Date', sortDateFuncClick],
   ]);
   const handleClick = (e) => {

@@ -33,11 +33,9 @@ const formatRunTime = (distance,pace) => {
   const hour = Math.floor(runTime / 60);
   if ( hour < 1 ){
     return runTime + 'min';
-  } else if ( hour > 1 ) {
+  } else {
     const min = Math.floor((runTime / 60 - hour) * 60.0);
     return hour + 'h' + min + 'min';
-  } else {
-    return hour + 'h';
   }
 };
 

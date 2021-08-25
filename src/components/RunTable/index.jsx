@@ -23,10 +23,17 @@ const RunTable = ({
     sortFuncInfo === 'BPM'
       ? a.average_heartrate - b.average_heartrate
       : b.average_heartrate - a.average_heartrate;
-  const sortRunTimeFunc = (a, b) =>
-    sortFuncInfo === 'TIME'
-      ? a.distance * a.average_speed - b.distance * b.average_speed
-      : b.distance * b.average_speed - a.distance * a.average_speed;
+  const sortRunTimeFunc = (a, b) => {
+    const aDistance = (a.distance / 1000.0).toFixed(1);
+    const bDistance = (b.distance / 1000.0).toFixed(1);
+    const aPace = (1000.0 / 60.0) * (1.0 / a.average_speed);
+    const bPace = (1000.0 / 60.0) * (1.0 / b.average_speed);
+    if (sortFuncInfo === 'TIME') {
+      return aDistance * aPace - bDistance * bPace;
+    } else {
+      return bDistance * bPace - aDistance * aPace;
+    }
+  };
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([

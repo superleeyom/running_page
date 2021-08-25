@@ -29,6 +29,7 @@ const RunTable = ({
     ['KM', sortKMFunc],
     ['Pace', sortPaceFunc],
     ['BPM', sortBPMFunc],
+    ['TIME', null],
     ['Date', sortDateFuncClick],
   ]);
   const handleClick = (e) => {

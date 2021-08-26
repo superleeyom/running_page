@@ -24,6 +24,10 @@ const RunTable = ({
       ? a.average_heartrate - b.average_heartrate
       : b.average_heartrate - a.average_heartrate;
   const sortRunTimeFunc = (a, b) => {
+    if (Number.isNaN(a.distance) || Number.isNaN(b.distance)
+      || Number.isNaN(a.average_speed) || Number.isNaN(b.average_speed)) {
+      return null;
+    }
     const aDistance = (a.distance / 1000.0).toFixed(1);
     const bDistance = (b.distance / 1000.0).toFixed(1);
     const aPace = (1000.0 / 60.0) * (1.0 / a.average_speed);

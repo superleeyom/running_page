@@ -26,7 +26,7 @@ const RunTable = ({
   const sortRunTimeFunc = (a, b) => {
     if (Number.isNaN(a.distance) || Number.isNaN(b.distance)
       || Number.isNaN(a.average_speed) || Number.isNaN(b.average_speed)) {
-      return null;
+      return 0;
     }
     const aDistance = (a.distance / 1000.0).toFixed(1);
     const bDistance = (b.distance / 1000.0).toFixed(1);

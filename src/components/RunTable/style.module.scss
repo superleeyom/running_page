@@ -8,7 +8,7 @@
 
   thead {
     color: $light;
-    //text-align: right;
+    text-align: right;
 
     th {
       padding: 0.5rem;
@@ -20,10 +20,10 @@
   td {
     padding: 0.5rem;
     border: 0;
-    //text-align: right;
+    text-align: right;
 
     &:first-child {
-      //text-align: left;
+      text-align: left;
     }
   }
 

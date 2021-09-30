@@ -22,6 +22,7 @@ env:
   RUN_TYPE: nike_to_strava # support runtastic/strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava, Please change the 'pass' it to your own
   ATHLETE: Leeyom
   TITLE: Leeyom's Running Record
+  MIN_GRID_DISTANCE: 5 # change min distance here
   TITLE_GRID: Over 5km Runs
   GITHUB_NAME: superleeyom
   GITHUB_EMAIL: 635709492@qq.com
@@ -107,7 +108,7 @@ jobs:
         if: env.RUN_TYPE != 'pass'
         run: |
           python scripts/gen_svg.py --from-db --title "${{ env.TITLE }}" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5
-          python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}"  --output assets/grid.svg --min-distance 5.0 --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime
+          python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}"  --output assets/grid.svg --min-distance "${{ env.MIN_GRID_DISTANCE }}"  --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime
           python scripts/gen_svg.py --from-db --type circular --use-localtime
           python scripts/gen_svg.py --from-db --year $(date +"%Y")  --language zh_CN --title "$(date +"%Y") Running" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
 

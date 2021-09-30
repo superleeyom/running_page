@@ -28,7 +28,7 @@ const formatPace = (d) => {
 
 const formatRunTime = (distance,pace) => {
   if (Number.isNaN(distance) || Number.isNaN(pace)) {
-    return '0min'
+    return '0min';
   }
   const formatPace = (1000.0 / 60.0) * (1.0 / pace);
   const minutes = Math.floor(formatPace * distance);

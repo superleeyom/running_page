@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: 'Running page',
     siteUrl: 'https://running.leeyom.top',
-    logo: 'https://avatars3.githubusercontent.com/u/22115219?s=460&u=b5ccdf99897979a4c95395f647370b67b4072526&v=4',
+    logo: 'https://avatars.githubusercontent.com/u/22115219?v=4',
     description: 'Personal site and blog',
     navLinks: [
       {

@@ -90,7 +90,7 @@ def run(refresh_token):
 
         last_id = data["paging"].get("after_id")
         activities = data["activities"]
-
+        logger.info(f"pull NRC activities: {activities}")
         logger.info(f"Found {len(activities)} new activities")
 
         for activity in activities:

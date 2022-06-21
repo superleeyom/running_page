@@ -72,7 +72,7 @@ if __name__ == "__main__":
     new_gpx_files = make_new_gpxs(files)
     time.sleep(10)  # just wait
     if new_gpx_files:
-        if len(new_gpx_files) > 10:
+        if len(new_gpx_files) > 20:
             print(
                 "too many gpx files to upload, will upload 10, because of the rate limit"
             )

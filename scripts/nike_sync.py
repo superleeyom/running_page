@@ -117,6 +117,7 @@ def save_activity(activity):
     path = os.path.join(OUTPUT_DIR, f"{activity_time}.json")
     try:
         with open(path, "w") as f:
+            print(f"debug activity path: {path}")
             json.dump(sanitise_json(activity), f, indent=4)
     except Exception:
         os.unlink(path)

@@ -79,7 +79,7 @@ class Nike:
 def run(refresh_token):
     nike = Nike(refresh_token)
     last_id = get_last_id()
-    logger.info(f"Running from ID {last_id}")
+    print(f"Running from ID {last_id}")
 
     while True:
         if last_id is not None:
@@ -88,7 +88,7 @@ def run(refresh_token):
             data = nike.get_activities_since_timestamp(0)
         last_id = data["paging"].get("after_id")
         activities = data["activities"]
-        print(f"pull NRC activities: {activities}")
+        # print(f"pull NRC activities: {activities}")
         for activity in activities:
             # ignore NTC record
             app_id = activity["app_id"]
@@ -98,14 +98,14 @@ def run(refresh_token):
                 or app_id == "com.nike.ntc.brand.droid"
                 or app_id == "com.nike.brand.ios.ntc"
             ):
-                logger.info(f"Ignore NTC record {activity_id}")
+                print(f"Ignore NTC record {activity_id}")
                 continue
 
             full_activity = nike.get_activity(activity_id)
             save_activity(full_activity)
 
         if last_id is None or not activities:
-            logger.info(f"Found no new activities, finishing")
+            print(f"Found no new activities, finishing")
             return
 
 
@@ -113,7 +113,7 @@ def save_activity(activity):
     activity_id = activity["id"]
     activity_time = activity["end_epoch_ms"]
     print(activity_time)
-    logger.info(f"Saving activity {activity_id}")
+    print(f"Saving activity {activity_id}")
     path = os.path.join(OUTPUT_DIR, f"{activity_time}.json")
     try:
         with open(path, "w") as f:
@@ -131,7 +131,7 @@ def get_last_id():
         file_name = file_names[-1]
         with open(os.path.join(OUTPUT_DIR, file_name)) as f:
             data = json.load(f)
-        logger.info(f"Last update from {data['id']}")
+        print(f"Last update from {data['id']}")
         return data["id"]
     # easy solution when error happens no last id
     except:
@@ -174,7 +174,7 @@ def get_to_generate_files():
             if t > 0 and t < 7226553600000:
                 timestamps.append(t)
             else:
-                logger.info(f"Invalid timestamp: {t}")
+                print(f"Invalid timestamp: {t}")
 
         if len(timestamps) > 0:
             last_time = max(timestamps)

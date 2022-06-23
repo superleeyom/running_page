@@ -88,8 +88,7 @@ def run(refresh_token):
             data = nike.get_activities_since_timestamp(0)
         last_id = data["paging"].get("after_id")
         activities = data["activities"]
-        logger.info(f"Found {len(activities)} new activities")
-
+        print(f"pull NRC activities: {activities}")
         for activity in activities:
             # ignore NTC record
             app_id = activity["app_id"]

@@ -73,7 +73,7 @@ if __name__ == "__main__":
     time.sleep(10)  # just wait
     if new_gpx_files:
         # if you want sync all data from nike to strava drop this if
-        if len(new_gpx_files) > 2:
+        if len(new_gpx_files) > 10:
             print(
                 "too many gpx files to upload, will upload 10, because of the rate limit"
             )

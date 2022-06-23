@@ -79,19 +79,15 @@ class Nike:
 def run(refresh_token):
     nike = Nike(refresh_token)
     last_id = get_last_id()
-    print(f"Running from ID {last_id}")
     logger.info(f"Running from ID {last_id}")
 
     while True:
         if last_id is not None:
-            print(f"last_id is not none {last_id}")
             data = nike.get_activities_since_id(last_id)
         else:
             data = nike.get_activities_since_timestamp(0)
-        print(f"running data: {data}")
         last_id = data["paging"].get("after_id")
         activities = data["activities"]
-        # logger.info(f"pull NRC activities: {activities}")
         logger.info(f"Found {len(activities)} new activities")
 
         for activity in activities:
@@ -101,6 +97,7 @@ def run(refresh_token):
             if (
                 app_id == "com.nike.ntc.brand.ios"
                 or app_id == "com.nike.ntc.brand.droid"
+                or app_id == "com.nike.brand.ios.ntc"
             ):
                 logger.info(f"Ignore NTC record {activity_id}")
                 continue
@@ -109,7 +106,6 @@ def run(refresh_token):
             save_activity(full_activity)
 
         if last_id is None or not activities:
-            print(f"Found no new activities, finishing: {activities}")
             logger.info(f"Found no new activities, finishing")
             return
 

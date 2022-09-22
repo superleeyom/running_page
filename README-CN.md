@@ -19,6 +19,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 
 | Runner                                          | page                                         | App       |
 | ----------------------------------------------- | ---------------------------------------------|-----------|
+| [zhubao315](https://github.com/zhubao315)       | <https://zhubao315.github.io/running>        | Strava    |
 | [shaonianche](https://github.com/shaonianche)   | <https://run.duanfei.org>                    | Strava    |
 | [yihong0618](https://github.com/yihong0618)     | <https://yihong.run>                         | Nike      |
 | [superleeyom](https://github.com/superleeyom)   | <https://running.leeyom.top>                 | Nike      |
@@ -36,7 +37,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 | [lusuzi](https://github.com/lusuzi)             | <https://running.lusuzi.vercel.app>          | Nike      |
 | [wh1994](https://github.com/wh1994)             | <https://run4life.fun>                       | Garmin    |
 | [liuyihui](https://github.com/YiHui-Liu)        | <https://run.foolishfox.cn>                  | Keep      |
-| [FrankSun](https://github.com/hi-franksun)      | <https://hi-franksun.github.io/running_page> | Nike      |
+| [sunyunxian](https://github.com/sunyunxian)     | <https://sunyunxian.github.io/running_page>  | Strava    |
 | [AhianZhang](https://github.com/AhianZhang)     | <https://running.ahianzhang.com>             | Nike      |
 | [L1cardo](https://github.com/L1cardo)           | <https://run.licardo.cn>                     | Nike      |
 | [luckylele666](https://github.com/luckylele666) | <https://0000928.xyz>                        | Strava    |
@@ -53,6 +54,9 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 | [hanpei](https://running.nexts.top)             | <https://running.nexts.top>    
 | [liugezhou](https://github.com/liugezhou)       | <https://run.liugezhou.online>               | Strava    |
 | [zhubao315](https://github.com/zhubao315)       | <https://zhubao315.github.io/running>        | Strava    |
+| [Jason Tan](https://github.com/Jason-cqtan)     | <https://jason-cqtan.github.io/running_page> | Nike      |
+| [Conge](https://github.com/conge)               | <https://conge.github.io/running_page>       | Strava      |
+| [cvvz](https://github.com/cvvz)                 | <https://cvvz.github.io/running>             | Strava      |
 
 ## 它是怎么工作的
 
@@ -85,11 +89,13 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 - **[Garmin](#Garmin)**
 - **[Garmin-cn](#garmin-cn-大陆用户请用这个)**
 - **[Keep](#Keep)**
-- **[悦跑圈](#joyrun 悦跑圈)** (因悦跑圈限制单个设备原因，无法自动化)
-- **[咕咚](#codoon 咕咚)** (因咕咚限制单个设备原因，无法自动化)
+- **[悦跑圈](#joyrun悦跑圈，因悦跑圈限制单个设备原因，无法自动化)**
+- **[咕咚](#codoon咕咚，因咕咚限制单个设备原因，无法自动化)**
 - **[GPX](#GPX)**
+- **[TCX](#TCX)**
+- **[Tcx+Strava(upload all tcx data to strava)](#TCX_to_Strava)**
 - **[Nike+Strava(Using NRC Run, Strava backup data)](#nikestrava)**
-- **[Strava_to_Garmin(Using Strava Run, Garmin backup data)](#)**
+- **[Garmin+Strava(Using Garmin Run, Strava backup data)](#garminstrava)**
 
 ## 下载
 
@@ -97,7 +103,7 @@ R.I.P. 希望大家都能健康顺利的跑过终点，逝者安息。
 git clone https://github.com/yihong0618/running_page.git --depth=1
 ```
 
-## 安装及测试 (node >= 12 and <= 14 python >= 3.6)
+## 安装及测试 (node >= 12 and <= 14 python >= 3.7)
 
 ```
 pip3 install -r requirements.txt
@@ -189,6 +195,20 @@ python3(python) scripts/gpx_sync.py
 
 </details>
 
+### TCX
+
+<details>
+<summary>Make your <code>TCX</code> data</summary>
+<br>
+
+把其它软件生成的 tcx files 拷贝到 TCX_OUT 之后运行
+
+```python
+python3(python) scripts/tcx_sync.py
+```
+
+</details>
+
 ### Keep
 
 <details>
@@ -216,6 +236,22 @@ python3(python) scripts/keep_sync.py ${your mobile} ${your password} --with-gpx
 
 ```python
 python3(python) scripts/keep_sync.py 13333xxxx example --with-gpx
+```
+
+</details>
+
+<details>
+<summary>路线偏移修正</summary>
+
+如果您得到的运动路线与实际路线对比有整体偏移，可以修改代码中的参数进行修正
+
+> 注：Keep目前采用的是GCJ-02坐标系，因此导致得到运动数据在使用WGS-84坐标系的平台（Mapbox、佳明等）中显示轨迹整体偏移
+
+- 修改 `scripts/keep_sync.py` 文件中的参数：
+
+```python
+# If your points need trans from gcj02 to wgs84 coordinate which use by Mappbox
+TRANS_GCJ02_TO_WGS84 = True
 ```
 
 </details>
@@ -307,10 +343,34 @@ python3(python) scripts/codoon_sync.py 54bxxxxxxx fefxxxxx-xxxx-xxxx --from-auth
 
 </details>
 
+<details>
+<summary>路线偏移修正</summary>
+
+如果您得到的运动路线与实际路线对比有整体偏移，可以修改代码中的参数进行修正
+
+> 注：咕咚最初采用GCJ-02坐标系，在2014年3月份左右升级为WGS-84坐标系，导致升级之前的运动数据在使用WGS-84坐标系的平台（Mapbox、佳明等）中显示轨迹整体偏移
+
+- 修改 `scripts/codoon_sync.py` 文件中的参数：
+
+> 注：TRANS_END_DATE 需要根据您的实际情况设定，程序会修正这一天之前的运动记录
+
+```python
+# If your points need trans from gcj02 to wgs84 coordinate which use by Mappbox
+TRANS_GCJ02_TO_WGS84 = True
+# trans the coordinate data until the TRANS_END_DATE, work with TRANS_GCJ02_TO_WGS84 = True
+TRANS_END_DATE = "2014-03-24"
+```
+
+</details>
+
 ### Garmin
 
 <details>
 <summary>获取您的 Garmin 数据</summary>
+<br>
+如果你只想同步跑步数据增加命令 --only-run
+如果你想同步 `tcx` 格式，增加命令 --tcx
+
 
 ```python
 python3(python) scripts/garmin_sync.py ${your email} ${your password}
@@ -449,6 +509,29 @@ python3(python) scripts/strava_sync.py ${client_id} ${client_secret} ${refresch_
 
 </details>
 
+### TCX_to_Strava
+
+<details>
+<summary>Upload all tcx files to strava</summary>
+
+<br>
+
+1. 完成 strava 的步骤
+2. 在项目根目录下执行:
+
+```python
+python3(python) scripts/tcx_to_strava_sync.py ${client_id} ${client_secret} ${strava_refresch_token}
+```
+
+示例：
+
+```python
+python3(python) scripts/tcx_to_strava_sync.py xxx xxx xxx
+```
+
+</details>
+
+
 ### Nike+Strava
 
 <details>
@@ -457,7 +540,7 @@ python3(python) scripts/strava_sync.py ${client_id} ${client_secret} ${refresch_
 <br>
 
 1. 完成 nike 和 strava 的步骤
-2. 在项目根目录下执行::
+2. 在项目根目录下执行:
 
 ```python
 python3(python) scripts/nike_to_strava_sync.py ${nike_refresh_token} ${client_id} ${client_secret} ${strava_refresch_token}
@@ -470,6 +553,29 @@ python3(python) scripts/nike_to_strava_sync.py eyJhbGciThiMTItNGIw******  xxx xx
 ```
 
 </details>
+
+### Garmin+Strava
+
+<details>
+<summary>Get your <code>Garmin</code> data and upload to strava</summary>
+
+<br>
+
+1. 完成 garmin 和 strava 的步骤
+2. 在项目根目录下执行:
+
+```python
+python3(python) scripts/garmin_to_strava_sync.py  ${client_id} ${client_secret} ${strava_refresch_token} ${garmin_email} ${garmin_password} --is-cn
+```
+
+示例：
+
+```python
+python3(python) scripts/garmin_to_strava_sync.py  xxx xxx xxx xx xxx
+```
+
+</details>
+
 
 ### Total Data Analysis
 
@@ -591,7 +697,6 @@ Actions [源码](https://github.com/yihong0618/running_page/blob/master/.github/
 提交 PR 前：
 
 - 使用 black 对 Python 代码进行格式化。(`black .`)
-- 使用 isort 对 Python import 进行格式化。(`isort --profile black  **/**/*.py`)
 
 # 特别感谢
 

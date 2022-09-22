@@ -1,7 +1,4 @@
 # some code from https://github.com/fieryd/PKURunningHelper great thanks
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import argparse
 import json
 import os
@@ -203,7 +200,7 @@ class Joyrun:
         gpx = gpxpy.gpx.GPX()
         gpx.nsmap["gpxtpx"] = "http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
         gpx_track = gpxpy.gpx.GPXTrack()
-        gpx_track.name = "gpx from keep"
+        gpx_track.name = "gpx from joyrun"
         gpx.tracks.append(gpx_track)
 
         # Create first segment in our GPX track:
@@ -311,7 +308,7 @@ if __name__ == "__main__":
         "--with-gpx",
         dest="with_gpx",
         action="store_true",
-        help="get all keep data to gpx and download",
+        help="get all joyrun data to gpx and download",
     )
     parser.add_argument(
         "--from-uid-sid",

@@ -13,7 +13,5 @@ timezonefinder
 pyyaml
 aiofiles
 cloudscraper==1.2.58
-python-tcxparser
-rich
-lxml
-eviltransform
+stravaweblib
+tenacity

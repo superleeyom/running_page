@@ -139,7 +139,7 @@ if __name__ == "__main__":
         loop = asyncio.get_event_loop()
         future = asyncio.ensure_future(
             upload_to_activities(
-                garmin_client, strava_client, strava_web_client, DataFormat.ORIGINAL
+                garmin_client, strava_client, strava_web_client, DataFormat.TCX
             )
         )
         loop.run_until_complete(future)

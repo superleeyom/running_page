@@ -218,6 +218,7 @@ class Garmin:
         await self.req.aclose()
 
     async def upload_activities_original(self, datas):
+        print("start upload activities to garmin!!!")
         if not self.is_login:
             self.login()
         for data in datas:
@@ -233,16 +234,16 @@ class Garmin:
                     self.upload_url, files=files, headers={"nk": "NT"}
                 )
                 os.remove(data.filename)
+                f.close()
             except Exception as e:
                 print(str(e))
                 # just pass for now
                 continue
             try:
                 resp = res.json()["detailedImportResult"]
-                print(resp)
+                print("garmin upload success: ", resp)
             except Exception as e:
-                print(e)
-                raise Exception("failed to upload")
+                print("garmin upload failed: ", e)
         await self.req.aclose()
 
 

@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/running_page', // Change to `/running_page` when running on github pages
+  pathPrefix: '/', // Change to `/running_page` when running on github pages
   siteMetadata: {
     siteTitle: 'Running page',
     siteUrl: 'https://running.leeyom.top',
@@ -23,6 +23,13 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: './src/static/',
+      },
+    },
+    {
+      resolve: "gatsby-plugin-vercel",
+      options: {
+        // (optional) Prints metrics in the console when true
+        debug: false,
       },
     },
     {

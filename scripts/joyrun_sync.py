@@ -85,7 +85,6 @@ class JoyrunAuth:
 
 
 class Joyrun:
-
     base_url = "https://api.thejoyrun.com"
 
     def __init__(self, user_name="", identifying_code="", uid=0, sid=""):
@@ -255,9 +254,9 @@ class Joyrun:
         # only for China now
         end_local = adjust_time(end, BASE_TIMEZONE)
         location_country = None
-        # joyrun location is kind of fucking strage, so I decide not use it, if you want use it, uncomment this two lines
-        # if run_data["city"] or run_data["province"]:
-        #     location_country = str(run_data["city"]) + " " + str(run_data["province"])
+        # joyrun location is kind of fucking strange, you can comments this two lines to make a better location
+        if run_data["city"] or run_data["province"]:
+            location_country = str(run_data["city"]) + ":" + str(run_data["province"])
         d = {
             "id": int(joyrun_id),
             "name": "run from joyrun",

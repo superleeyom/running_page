@@ -10,6 +10,11 @@ img::-moz-selection {
   background: transparent;
 }
 
+@font-face {
+    font-family: "LXGW WenKai Lite";
+    src: url("LXGWWenKaiLite-Regular.ttf");
+}
+
 body {
   font-family: $global-font-family;
   font-weight: normal;

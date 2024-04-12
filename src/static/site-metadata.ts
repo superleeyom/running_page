@@ -10,7 +10,7 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: '我的跑步记录日志',
+  siteTitle: '我的跑步日志',
   siteUrl: 'https://running.leeyom.top',
   logo: 'https://img2.imgtp.com/2024/04/12/O8DinhDV.jpeg',
   description: '喜欢强风吹拂的感觉~',
